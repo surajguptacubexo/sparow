@@ -1,47 +1,20 @@
 import React, {Component} from 'react';
 
-const randomWords = require('random-words');
-
 class Home extends Component {
-    // constructor() {
-    //     super();
-    //
-    // }
-    random = () => {
-        for (var i = 1; i <= 1000; i++) {
+    state = {
+  todos: [{id:1,name:'ishan',location:"indore"},{id:2,name:'ishml;an',location:"inbjkkldore"},{id:3,name:'iszdfgzdhhan',location:"ifgbhxfghfndore"}],
 
-            if((i % 5 === 0) && (i%20 === 0) && (i%100 === 0)){
-                document.write("beep boop" + "<br/>")
-            }
-            else if ((i % 5 === 0) && (i%20 === 0)) {
-                document.write("boop" + "<br/>")
-            }
-
-            else if (i % 5 === 0) {
-                document.write("beep" + "<br/>")
-            }
-
-            // else if((i % 5 === 0) && (i%20 === 0) && (i%100 === 0)){
-            //     document.write("boop" + "<br/>")
-            // }
-            else{
-                document.write(randomWords()+ "<br/>")
-            }
-
-            ;
-
-
-        }
-
-    }
-
+}
     render() {
-
-
         return (
             <div>
+                <h2>HH</h2>
+                <ul>
+                    {this.state.todos.map(todo => (
+                    <li>{todo.name}</li>
+                 ))}
+                </ul>
 
-                {this.random()}
             </div>
         );
     }
